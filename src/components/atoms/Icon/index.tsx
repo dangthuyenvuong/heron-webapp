@@ -1,4 +1,5 @@
 import successIcon from 'assets/icons/success-icon.svg'
+import passwordSuccessIcon from 'assets/icons/password-success-icon.svg'
 
 interface IconProp extends React.HTMLAttributes<HTMLDivElement> {
     src: string
@@ -20,4 +21,11 @@ export const SuccessIcon: React.FC<SuccessIconProp> = ({ ...ref }) => {
     return (
         <Icon src={successIcon}></Icon>
     )
+}
+
+type ResetPasswordSuccessIconProp =  React.HTMLAttributes<HTMLDivElement> & {
+}
+
+export const ResetPasswordSuccessIcon: React.FC<ResetPasswordSuccessIconProp> = ({ className, ...ref }) => {
+    return <Icon src={passwordSuccessIcon} />
 }

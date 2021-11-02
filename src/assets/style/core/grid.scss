@@ -100,7 +100,11 @@
 	max-width: 100%;
 	padding: 0 $container-padding;
 }
-
+.container-full{
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 $container-padding;
+}
 // .container-fuild{
 // 	padding: 0 $container-padding;
 // }
@@ -512,10 +516,6 @@ $width in $grid {
 	flex-direction: column;
 }
 
-.gap-25 {
-	gap: 25px;
-}
-
 .f-center-y {
 	align-items: center;
 }
@@ -534,4 +534,35 @@ $width in $grid {
 }
 .w-full{
 	width: 100%;
+}
+
+@each $var in (10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85) {
+	.gap-#{$var}{
+		gap: #{$var}px;
+	}
+	.m-t-#{$var}{
+		margin-top: #{$var}px;
+	}
+	.m-b-#{$var}{
+		margin-bottom: #{$var}px;
+	}
+	.m-l-#{$var}{
+		margin-left: #{$var}px;
+	}
+	.m-r-#{$var}{
+		margin-right: #{$var}px;
+	}
+
+	.p-t-#{$var}{
+		padding-top: #{$var}px;
+	}
+	.p-b-#{$var}{
+		padding-bottom: #{$var}px;
+	}
+	.p-l-#{$var}{
+		padding-left: #{$var}px;
+	}
+	.p-r-#{$var}{
+		padding-right: #{$var}px;
+	}
 }

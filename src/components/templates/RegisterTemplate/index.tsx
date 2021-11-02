@@ -4,6 +4,7 @@ import { DatePicker } from '@mui/lab'
 import './style.scss'
 import { useState } from "react"
 import { PhoneField } from "components/atoms/PhoneField"
+import { SuccessfullTemplate } from "../SuccessfullTemplate"
 interface RegisterTemplateProp extends React.HTMLAttributes<HTMLDivElement> {
 }
 
@@ -14,12 +15,23 @@ const countries = [
     }
 ]
 
+const STEP_REGISTER = 0
+const STEP_SUCCESS = 1
+
 export const RegisterTemplate: React.FC<RegisterTemplateProp> = ({ ...ref }) => {
+
+    const [step, setStep] = useState(STEP_REGISTER)
     const [value, setValue] = useState<Date | null>(null);
 
     const handleChange = (newValue: Date | null) => {
         setValue(newValue);
     };
+
+    const onClick = () => {
+        setStep(STEP_SUCCESS)
+    }
+    if(step === STEP_SUCCESS) return <SuccessfullTemplate />
+
     return (
         <AuthForm
             className="register-template"
@@ -41,7 +53,7 @@ export const RegisterTemplate: React.FC<RegisterTemplateProp> = ({ ...ref }) => 
                 </div>
                 <PhoneField countries={countries}/>
                 <TextField label="Email" type='email' />
-                <Button>Continue</Button>
+                <Button onClick={onClick}>Continue</Button>
             </div>
 
         </AuthForm>

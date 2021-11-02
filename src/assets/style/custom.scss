@@ -1,5 +1,9 @@
+body{
+    overflow-x: hidden;
+}
 .button{
     border-radius: 100px !important;
+    padding: 0 46px !important;
 }
 .text-field:not(.phone-text-field){
     .MuiOutlinedInput-root{

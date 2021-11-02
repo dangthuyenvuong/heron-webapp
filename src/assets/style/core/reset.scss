@@ -188,5 +188,5 @@ a{
 // }
 
 :root{
-	@extend %scrollbar;
+	@extend %scrollbar !optional;
 }

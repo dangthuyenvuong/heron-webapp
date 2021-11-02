@@ -4,7 +4,6 @@ interface RegisterProp extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 const Register: React.FC<RegisterProp> = ({ ...ref }) => {
-    return <SuccessfullTemplate />
     return <RegisterTemplate />
 }
 

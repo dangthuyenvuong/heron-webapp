@@ -16,17 +16,17 @@ export const ForgotPasswordTemplate: React.FC<ForgotPasswordTemplateProp> = ({ .
             title="Forgot password"
             className="forgot-password"
             description={
-                SEND_EMAIL ? "Enter your email address to get help signing into your account again." : 
+                step === SEND_EMAIL ? "Enter your email address to get help signing into your account again." : 
                 "We have sent a code to < email>. Enter the code below to verify."
             }
         >
-            <div className="flex-col gap-25">
+            <div className="flex-col gap-30">
                 {
                     step === SEND_EMAIL ? <>
-                        <TextField label="Email" />
+                        <TextField name="email" label="Email" />
                         <Button onClick={() => setStep(VERIFY_CODE)}>Continue</Button>
                     </> : <>
-                        <TextField label="Verification Code" />
+                        <TextField name="verycode" label="Verification Code" />
                         <Button>Verify</Button>
                         <a className="resendcode" href="#" onClick={(ev) => ev.preventDefault()}>Resend code</a>
                     </>

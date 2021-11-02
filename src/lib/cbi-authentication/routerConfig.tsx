@@ -3,7 +3,7 @@ import { PrivateRoute } from "./PrivateRoute";
 
 declare type Router<T, P> = {
     component: React.FC<any>,
-    path?: string,
+    path?: string | string[],
     exact?: boolean,
     auth?: boolean | string,
     name?: T,
@@ -16,6 +16,7 @@ declare type RouterConfig<T, P> = Router<T, P>[]
 type RouterConfigReponse<T extends string> = {
     routerName: { [key in T]: string },
     routers: JSX.Element[],
+    // path: string[]
     // routerParam: { [K in T]: () => { [key in P]?: string } },
 }
 
@@ -34,15 +35,17 @@ export const routerConfig: RouterConfigOptions = (routerParams, pathParrent = ''
         path = path.replace(/\/+/g, '/')
         let children: any = null
 
-        if (e.name) {
-            routerName[e.name] = path
-            routerParam[e.name] = (() => () => useParams())()
-        }
+        // if (e.name) {
+        //     routerName[e.name] = path
+        //     routerParam[e.name] = (() => () => useParams())()
+        // }
 
         if (childRouters) {
             let { routers, routerName: name } = routerConfig(childRouters, path)
             children = routers
 
+            path = routerPath(e)
+            console.log(path)
             Object.assign(routerName, name)
         }
 
@@ -50,7 +53,7 @@ export const routerConfig: RouterConfigOptions = (routerParams, pathParrent = ''
 
         const props = {
             auth,
-            key: path,
+            // key: path,
             exact,
             path,
             component: (prop: any) => <Component>
@@ -67,4 +70,23 @@ export const routerConfig: RouterConfigOptions = (routerParams, pathParrent = ''
         routerParam,
         routers: list
     }
+}
+
+const routerPath = <T, P>(routers: Router<T,P>, pathParrent?: string) => {
+    if(routers?.routers?.length){
+        let path: string[] = []
+
+        for(let i in routers.routers){
+            let p = routerPath(routers.routers[i])
+            if(typeof p === 'string'){
+                path.push(p)
+            }else if(Array.isArray(p)){
+                path.push(...p)
+            }
+        }
+
+        return path
+    }
+
+    return routers.path
 }

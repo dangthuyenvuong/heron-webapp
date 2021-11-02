@@ -38,7 +38,13 @@ export const { routers, routerName: url, } = routerConfig([
                 name: 'resetPassword'
             },
         ]
-    }
+    },
+    {
+        path: '/',
+        exact: true,
+        component: lazy(() => import('../pages/home')),
+        name: 'home'
+    },
 ])
 
 
