@@ -1,0 +1,24 @@
+@import "assets/style/import";
+
+.welcome-template {
+
+    .button {
+        width: 100%;
+    }
+    
+    .social {
+        gap: 30px;
+        margin: 45px 0 100px 0;
+        @include flex-center-x;
+    }
+
+    .create-account {
+        margin-top: 196px;
+        @include flex-center-x;
+        font-size: 18px;
+        a {
+            font-size: 18px;
+            text-decoration: underline;
+        }
+    }
+}

@@ -1,0 +1,5 @@
+export * from './LoginTemplate'
+export * from './WelcomeBackTemplate'
+export * from './RegisterTemplate'
+export * from './SuccessfullTemplate'
+export * from './ForgotPasswordTemplate'

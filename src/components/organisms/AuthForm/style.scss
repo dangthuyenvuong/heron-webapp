@@ -1,0 +1,30 @@
+@import "assets/style/import";
+
+.auth-form {
+    .back-to-homepage {
+        font-size: 14px;
+        color: $main-color;
+        @include flex-center-y;
+    }
+
+    .title {
+        margin-top: 45px;
+        margin-bottom: 25px;
+        color: $main-color;
+        font-size: 40px;
+    }
+
+    a {
+        color: $main-color;
+    }
+
+    .description {
+        margin-bottom: 70px;
+        font-size: 18px;
+        line-height: 26px;
+        a {
+            font-size: 18px;
+        }
+
+    }
+}
