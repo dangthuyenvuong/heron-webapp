@@ -6,7 +6,48 @@ type ProductCardListProp = React.HTMLAttributes<HTMLDivElement> & {
 }
 
 export const ProductCardList: React.FC<ProductCardListProp> = ({ className, ...ref }) => {
-    const products: Product[] = []
+    const products: Product[] = [
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+    ]
 
     return (
         <div

@@ -9,7 +9,9 @@ export const ProductCard: React.FC<ProductCardProp> = ({ className, ...ref }) =>
             {...ref}
             className={`ProductCard ${className ?? ''}`}
         >
-            
+            <div className="cover">
+                
+            </div>
         </div>
     )
 }

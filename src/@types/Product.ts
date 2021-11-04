@@ -4,5 +4,5 @@ export interface Product {
     name: string
     rate: number
     money: number
-    slug: number
+    slug: string
 }
