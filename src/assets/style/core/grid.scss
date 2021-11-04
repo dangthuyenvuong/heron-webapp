@@ -535,7 +535,9 @@ $width in $grid {
 .w-full{
 	width: 100%;
 }
-
+.jusitify-space-between{
+	justify-content: space-between;
+}
 @each $var in (10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85) {
 	.gap-#{$var}{
 		gap: #{$var}px;

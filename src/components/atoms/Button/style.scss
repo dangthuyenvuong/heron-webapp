@@ -1,0 +1,25 @@
+@import 'assets/style/import';
+
+.button {
+    &.type-1 {
+        background: #eefbfb;
+        color: $main-color;
+
+        &:hover {
+            background: darken($color: #eefbfb, $amount: 10);
+        }
+    }
+
+    &.white {
+        background: white;
+        color: $main-color;
+
+        &:hover {
+            background: darken($color:white, $amount: 10);
+        }
+    }
+
+    .icon {
+        margin-right: 20px;
+    }
+}

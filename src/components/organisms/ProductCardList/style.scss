@@ -1,0 +1,44 @@
+@import 'assets/style/import';
+
+.ProductCardList{
+    padding: 120px 0;
+    > .title{
+        font-size: 36px;
+        line-height: 36px;
+        margin-bottom: 36px;
+        display: flex;
+        justify-content: space-between;
+        
+        .view-all{
+            color: $main-color;
+            text-decoration: underline;
+        }
+    }
+    .flickity-enabled{
+        width: 100%;
+        outline: none;
+        position: relative;
+        .flickity-button.flickity-prev-next-button{
+
+            width: 40px;
+            height: 40px;
+            display: flex;
+            background: white;
+            box-shadow: 0 12px 21px 0 rgba(45, 45, 45, 0.15);
+            border-radius: 100%;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+            &.previous{
+                top: -75px;
+                right: 120px;
+            }
+            &.next{
+                top: -75px;
+                right: 70px;
+            }
+        }
+    }
+}

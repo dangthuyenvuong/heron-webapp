@@ -1,3 +1,4 @@
+import { Product } from "@types"
 import { PostItemProp, SliderItemProp } from "components/organisms"
 import { HomeTemplate } from "components/templates"
 
@@ -84,7 +85,122 @@ const Home: React.FC<HomeProp> = ({ className, ...ref }) => {
             image: '/img/post/image-2.png'
         }
     ]
-    return <HomeTemplate sliders={sliders} posts={posts} />
+
+    const products: Product[] = [
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+        {
+            name: 'DNA Scientific Wellness Panels Plus ',
+            rate: 4, 
+            money: 100.00,
+            cover: '/img/product/sanpham1.webp',
+            id: '1',
+            slug: 'a'
+        },
+    ]
+    return <HomeTemplate products={products} sliders={sliders} posts={posts} />
 }
 
 export default Home
