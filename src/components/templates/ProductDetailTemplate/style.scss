@@ -1,0 +1,94 @@
+@import 'assets/style/import';
+
+.ProductDetailTemplate {
+    .product-content {
+        .cover {
+            img {
+                max-width: 100%;
+            }
+        }
+
+        .detail {
+            .title {
+                font-size: 32px;
+                line-height: 44px;
+            }
+
+            .line {
+                display: flex;
+                align-items: center;
+                font-size: 18px;
+
+                .id {
+                    border-right: 1px solid #d8d8d8;
+                    padding-right: 25px;
+                    font-weight: 200;
+                }
+
+                .rate {
+                    margin-left: 25px;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    a {
+                        font-weight: 200;
+                        border-bottom: 1px solid $text-color;
+
+                        &:hover {
+                            border-color: $main-color;
+                        }
+                    }
+                }
+            }
+
+            .price {
+                margin: 37px 0 30px 0;
+
+                .real-price {
+                    font-size: 32px;
+                    color: $main-color-bold;
+                }
+            }
+
+            .number {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+
+                .btn-decrement,
+                .btn-increment {
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    border: 0;
+                    padding: 0 !important;
+                    border-radius: 0 !important;
+                    color: $text-color;
+                    font-weight: 200;
+                    min-width: unset;
+                }
+
+                .text-field {
+                    input {
+                        margin-top: 0;
+                        @include css3(appearance, none);
+                        padding: 0 5px;
+                        text-align: center;
+
+                    }
+
+                    width: 40px;
+                    height: 40px !important;
+
+                    fieldset {
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}

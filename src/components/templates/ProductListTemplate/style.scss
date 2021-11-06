@@ -1,0 +1,19 @@
+.ProductListTemplate {
+    .input-search {
+        .text-field {
+            height: 51.69px !important;
+        }
+
+        input {
+            font-size: 18px;
+        }
+    }
+
+    .sortby {
+        width: 100%;
+        font-size: 18px;
+    }
+    .product-list{
+        justify-content: flex-start;
+    }
+}

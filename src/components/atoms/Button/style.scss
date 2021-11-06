@@ -1,7 +1,9 @@
 @import 'assets/style/import';
 
 .button {
-    &.type-1 {
+    white-space: nowrap;
+
+    &.type-add-to-cart {
         background: #eefbfb;
         color: $main-color;
 
@@ -19,7 +21,28 @@
         }
     }
 
+    &.type-phone {
+        background: #e4f0ef;
+        color: $main-color;
+        &:hover {
+            background: darken($color:#e4f0ef, $amount: 10);
+        }
+    }
+
+    &.transparent{
+        background: transparent !important;
+        color: $main-color;
+        border: 1.5px solid $main-color;
+        &:hover{
+            background: lighten($color: $main-color, $amount: 10)
+        }
+    }
+
     .icon {
         margin-right: 20px;
+    }
+
+    &.size-small{
+        height: 46px;
     }
 }

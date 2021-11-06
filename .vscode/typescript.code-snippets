@@ -13,6 +13,27 @@
 	// 	"description": "Log output to console"
 	// }
 
+	"React Typescript Init Component": {
+		"prefix": "rtic",
+		"body": [
+			"import { classNames } from \"utils\"",
+			"import \"./style.scss\"",
+			"",
+			"type ${1:$TM_FILENAME_BASE}Prop = React.HTMLAttributes<HTMLDivElement> & {",
+			"}",
+			"",
+			"export const ${1:$TM_FILENAME_BASE}: React.FC<${1:$TM_FILENAME_BASE}Prop> = ({ className, ...ref }) => {",
+			"    return (",
+			"		<div",
+			"			{...ref}",
+			"			className={classNames('${1:$TM_FILENAME_BASE}', className)}",
+			"		>",
+			"		</div>",
+			"    )",
+			"}"
+		],
+		"description": "React Typescript Component"
+	},
 	"React Typescript Component": {
 		"prefix": "rtc",
 		"body": [
@@ -23,7 +44,7 @@
 			"    return (",
 			"		<div",
 			"			{...ref}",
-			"			className={`${1:$TM_FILENAME_BASE} ${className ?? ''}`}",
+			"			className={classNames('${1:$TM_FILENAME_BASE}', className)}",
 			"		>",
 			"		</div>",
 			"    )",

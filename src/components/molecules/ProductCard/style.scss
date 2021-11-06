@@ -1,35 +1,72 @@
 @import 'assets/style/import';
 
-.ProductCard{
+.ProductCard {
     padding: 25px;
-    width: 25%;
     border-radius: 20px;
     @include transition;
-    > .title{
-        font-size: 18px;
-        line-height: 18px;
-        margin-top: 25px;
-        margin-bottom: 12px;
+
+    >.title {
+
+        a {
+            font-size: 18px;
+            line-height: 18px;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-weight: bold;
+            display: block;
+        }
     }
-    .cover{
+
+    .cover {
         height: 0;
         padding-bottom: 100%;
         border-radius: 20px;
         overflow: hidden;
-        img{
-            max-width: 100%;
+
+        img {
+            width: 100%;
             object-fit: cover;
         }
     }
-    .rate{
 
+    .rate {
+        font-size: 18px;
+        display: flex;
+        gap: 10px;
+        margin-bottom: 18px;
     }
-    .price{
+
+    .price {
         font-size: 24px;
         color: #424242;
         font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        .discount {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            .percent {
+                height: 19px;
+                padding: 3px 7px 2px 6px;
+                border-radius: 4px;
+                background-color: #ffe2e2;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ff6d6e;
+            }
+            .price-discount{
+                font-size: 14px;
+                text-decoration: line-through;
+            }
+        }
     }
-    &:hover{
+
+    &:hover {
         box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.1);
     }
 }

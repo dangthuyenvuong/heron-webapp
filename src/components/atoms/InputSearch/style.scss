@@ -1,0 +1,19 @@
+@import 'assets/style/import';
+
+.InputSearch{
+    display: flex;
+    border: $input-border;
+    align-items: center;
+    border-radius: 100px;
+    overflow: hidden;
+    padding: 0 20px;
+    .text-field{
+        height: 46px !important;
+        input{
+            margin: 0;
+        }
+        fieldset{
+            border: none;
+        }
+    }
+}

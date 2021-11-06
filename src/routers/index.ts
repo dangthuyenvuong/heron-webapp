@@ -40,11 +40,27 @@ export const { routers, routerName: url, } = routerConfig([
         ]
     },
     {
-        path: '/',
-        exact: true,
-        component: lazy(() => import('../pages/home')),
-        name: 'home'
+        component: lazy(() => import('../components/layouts/MainLayout')),
+        routers: [
+            {
+                path: '/',
+                exact: true,
+                component: lazy(() => import('../pages/home')),
+                name: 'home'
+            },
+            {
+                path: '/package',
+                exact: true,
+                component: lazy(() => import('../pages/product')),
+                name: 'product'
+            },
+            {
+                path: '/package/:slug',
+                exact: true,
+                component: lazy(() => import('../pages/package_detail')),
+                name: 'product'
+            },
+        ]
     },
+
 ])
-
-

@@ -1,17 +1,11 @@
+import { ISlider } from "@types"
 import { Button, Title, Typography } from "components/atoms"
 import Flickity from "react-flickity-component"
 import './style.scss'
 
 
-export type SliderItemProp = {
-    title: string,
-    description: string,
-    image: string,
-    buttonText: string,
-    buttonLink: string
-}
 type SliderProp = React.HTMLAttributes<HTMLDivElement> & {
-    sliders?: SliderItemProp[]
+    sliders?: ISlider[]
 }
 
 export const Slider: React.FC<SliderProp> = ({ sliders, className, ...ref }) => {

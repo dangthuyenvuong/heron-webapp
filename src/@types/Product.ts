@@ -3,6 +3,9 @@ export interface Product {
     cover: string
     name: string
     rate: number
-    money: number
+    price: number
     slug: string
+    rateCount: number
+    discountPercent: number
+    realPrice: number
 }

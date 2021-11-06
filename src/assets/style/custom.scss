@@ -71,3 +71,10 @@ body{
         }
     }
 }
+.MuiSelect-root{
+    &.rounded{
+        fieldset{
+            border-radius: 100px;
+        }
+    }
+}

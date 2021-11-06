@@ -115,6 +115,12 @@
 	max-width: 100%;
 	padding: 0 $container-padding;
 }
+.container-min{
+	width: $container-min-width;
+	margin: 0 auto;
+	max-width: 100%;
+	padding: 0 $container-padding;
+}
 
 
 @each $i in (1000, 1100, 1200, 1300, 1400) {
@@ -537,6 +543,12 @@ $width in $grid {
 }
 .jusitify-space-between{
 	justify-content: space-between;
+}
+.flex-wrap{
+	flex-wrap: wrap;
+}
+.justify-center{
+	justify-content: center;
 }
 @each $var in (10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85) {
 	.gap-#{$var}{
