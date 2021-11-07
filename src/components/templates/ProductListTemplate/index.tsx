@@ -1,7 +1,7 @@
 import { Slider as ISlider, Product } from "@types"
 import { IconSearch, InputIcon, Select, Option, ListView } from "components/atoms"
-import { Breadcrumbs, BreadcrumbItem, Paginate, ProductCard } from "components/molecules"
-import { ProductFilter, Slider } from "components/organisms"
+import { ProductCard } from "components/molecules"
+import { BreadcrumbItem, Breadcrumbs, Paginate, ProductFilter, Slider } from "components/organisms"
 import { classNames } from "utils"
 import "./style.scss"
 
@@ -46,12 +46,11 @@ export const ProductListTemplate: React.FC<ProductListTemplateProp> = ({ sliders
                                 </Select>
                             </div>
                         </div>
-                        <div className="row flex-wrap product-list">
-                            <ListView
-                                items={products}
-                                render={(e) => <ProductCard className="col-md-4 m-b-55" key={e.id} {...e} />}
-                            />
-                        </div>
+                        <ListView
+                            className="row flex-wrap product-list"
+                            items={products}
+                            render={(e) => <ProductCard className="col-md-4 m-b-55" key={e.id} {...e} />}
+                        />
                         <div className="flex justify-center">
                             <Paginate />
                         </div>

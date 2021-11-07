@@ -1,7 +1,7 @@
 @import 'assets/style/import';
 
 .ProductDetailTemplate {
-    .product-content {
+    .product-info {
         .cover {
             img {
                 max-width: 100%;
@@ -50,44 +50,13 @@
                     color: $main-color-bold;
                 }
             }
-
-            .number {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-
-                .btn-decrement,
-                .btn-increment {
-                    width: 40px;
-                    height: 40px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    cursor: pointer;
-                    border: 0;
-                    padding: 0 !important;
-                    border-radius: 0 !important;
-                    color: $text-color;
-                    font-weight: 200;
-                    min-width: unset;
-                }
-
-                .text-field {
-                    input {
-                        margin-top: 0;
-                        @include css3(appearance, none);
-                        padding: 0 5px;
-                        text-align: center;
-
-                    }
-
-                    width: 40px;
-                    height: 40px !important;
-
-                    fieldset {
-                        height: 40px;
-                    }
-                }
+        }
+    }
+    .product-related{
+        .ProductCard{
+            padding: 15px;
+            .rate{
+                margin-bottom: 8px;
             }
         }
     }

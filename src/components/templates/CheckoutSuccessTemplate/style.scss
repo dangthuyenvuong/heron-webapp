@@ -1,0 +1,30 @@
+@import 'assets/style/import';
+
+.CheckoutSuccessTemplate{
+    .container{
+        max-width: 750px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        min-height: calc(100vh - #{$header-height});
+        padding: 80px 15px;
+        .ListView{
+            background: #f3fcfc;
+            border-radius: 6px;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            flex-wrap: wrap;
+            .items{
+                display: flex;
+                gap: 12px;
+            }
+        }
+        .Button,
+        .button{
+            min-width: 220px;
+        }
+    }
+}

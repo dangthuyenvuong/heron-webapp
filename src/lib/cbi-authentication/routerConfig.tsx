@@ -35,18 +35,17 @@ export const routerConfig: RouterConfigOptions = (routerParams, pathParrent = ''
         path = path.replace(/\/+/g, '/')
         let children: any = null
 
-        // if (e.name) {
-        //     routerName[e.name] = path
-        //     routerParam[e.name] = (() => () => useParams())()
-        // }
+        if (e.name) {
+            routerName[e.name] = path
+        }
 
         if (childRouters) {
             let { routers, routerName: name } = routerConfig(childRouters, path)
             children = routers
 
             path = routerPath(e)
-            console.log(path)
             Object.assign(routerName, name)
+
         }
 
         // let Router: typeof Route | typeof PrivateRoute = Route

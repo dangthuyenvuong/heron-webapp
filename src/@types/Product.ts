@@ -7,5 +7,6 @@ export interface Product {
     slug: string
     rateCount: number
     discountPercent: number
-    realPrice: number
+    realPrice: number,
+    detail: string[]
 }

@@ -21,11 +21,7 @@ const theme = createTheme({
   },
   typography: {
     button: {
-      textTransform: 'none',
-      fontWeight: 'bold',
-      borderWidth: 1.5,
-      height: 56,
-      fontSize: 18,
+      
     },
   },
   components: {
@@ -34,8 +30,8 @@ const theme = createTheme({
         style: {
           height: 62,
         },
-        className: 'text-field'
-      }
+        className: 'text-field',
+      },
     }
   }
   // shadows: Array(25).fill("none") as any

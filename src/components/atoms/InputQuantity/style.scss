@@ -1,0 +1,41 @@
+@import 'assets/style/import';
+
+.InputQuantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    .btn-decrement,
+    .btn-increment {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border: 0;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        color: $text-color !important;
+        font-weight: 200;
+        min-width: unset;
+        border-color: transparent !important;
+    }
+
+    .text-field {
+        input {
+            margin-top: 0;
+            @include css3(appearance, none);
+            padding: 0 5px;
+            text-align: center;
+
+        }
+
+        width: 40px;
+        height: 40px !important;
+
+        fieldset {
+            height: 40px;
+        }
+    }
+}

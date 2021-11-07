@@ -23,24 +23,31 @@
 	-webkit-box-orient: vertical;
 }
 
-@mixin list2($classColor){
-	@each $arr1,$arr2 in $classColor{
+@mixin list2($classColor) {
+
+	@each $arr1,
+	$arr2 in $classColor {
 		// &.#{$arr1}{
 		// 	@content($arr2);
 		// }
 	}
 }
 
-@mixin generateClassColor($classColor){
-	@each $class,$color in $classColor{
+@mixin generateClassColor($classColor) {
+
+	@each $class,
+	$color in $classColor {
 		// &.#{$class}{
 		// 	@content($color);
 		// }
 	}
 }
 
-@mixin generateClassList3($list){
-	@each $arr1, $arr2, $arr3 in $list{
+@mixin generateClassList3($list) {
+
+	@each $arr1,
+	$arr2,
+	$arr3 in $list {
 		// &.#{$arr1}{
 		// 	@content($arr2,$arr3);
 		// }
@@ -108,7 +115,7 @@
 	}
 }
 
-@mixin scrollbar($width: 7px, $background: #ccc, $radius: 7px, $border-color: #ddd) {
+@mixin scrollbar($width: 7px, $background: #ccc, $radius: 7px, $border-color: rgb(90, 26, 26)) {
 	&::scrollbar:vertical {
 		width: $width;
 	}
@@ -213,6 +220,42 @@
 		border-radius: $radius;
 		background-color: var(--border-color);
 	}
+}
+
+@mixin scrollbar($bg) {
+    $width: $scrollbar-width;
+    $background: $bg;
+    $radius: $scrollbar-radius;
+    $border-color: #ddd;
+    $bg-scroll-track: #f3f3f3;
+    @content;
+
+    @each $name in ('', '-moz-', '-ms-', '-webkit-') {
+        &::#{$name}scrollbar {
+            width: $scrollbar-width;
+            @extend %vertical !optional;
+        }
+
+        &::#{$name}scrollbar-track {
+            border-radius: $radius;
+            background-color: $bg-scroll-track;
+            @extend %track !optional;
+        }
+
+        &::#{$name}scrollbar {
+            // background-color: $background;
+            opacity: 0.5;
+            appearance: none;
+            @extend %scrollbar !optional;
+        }
+
+        &::#{$name}scrollbar-thumb {
+            border-radius: $radius;
+            background-color: var(--border-color);
+            background: $background;
+            @extend %thumb !optional;
+        }
+    }
 }
 
 @mixin fontface($name, $file) {
@@ -393,15 +436,16 @@
 	font-size: $size;
 }
 
-@mixin flex-center-y{
+@mixin flex-center-y {
 	display: flex;
 	align-items: center;
 }
 
-@mixin flex-center-x{
+@mixin flex-center-x {
 	display: flex;
 	justify-content: center;
 }
+
 // @mixin text($size, $lineHeight: false, $family:false ){
 // 	@if $size{
 // 		font-size: $size;
@@ -414,4 +458,4 @@
 // 	@if $family{
 // 		font-family: $family;
 // 	}
-// }
+// }.

@@ -28,7 +28,9 @@
 }
 
 
-
+.cursor-pointer{
+    cursor: pointer;
+}
 
 .transition{
     @include css3(transition,$transition);

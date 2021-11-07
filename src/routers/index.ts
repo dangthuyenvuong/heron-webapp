@@ -58,8 +58,35 @@ export const { routers, routerName: url, } = routerConfig([
                 path: '/package/:slug',
                 exact: true,
                 component: lazy(() => import('../pages/package_detail')),
-                name: 'product'
+                name: 'productDetail'
             },
+            // ---------Cart-------
+            {
+                path: '/view-cart',
+                exact: true,
+                component: lazy(() => import('../pages/cart/view_cart')),
+                name: 'viewCart'
+            },
+            {
+                path: '/checkout',
+                exact: true,
+                component: lazy(() => import('../pages/cart/checkout')),
+                name: 'checkout'
+            },
+            {
+                path: '/checkout-successfully',
+                exact: true,
+                component: lazy(() => import('../pages/cart/successfully')),
+                name: 'checkoutSuccessfully'
+            },
+            // ----------Booking--------
+            {
+                path: '/book-appointment',
+                exact: true,
+                component: lazy(() => import('../pages/book_appointment')),
+                name: 'bookAppointment'
+            },
+
         ]
     },
 

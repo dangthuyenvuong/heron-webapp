@@ -1,0 +1,52 @@
+@import 'assets/style/import';
+
+
+
+.BookAppointmentTemplate {
+    --color: #838383;
+    $color-active: $main-color-bold;
+    display: flex;
+
+    .step-box {
+        min-height: calc(100vh - #{$header-height});
+        background: #fbfbfb;
+        padding: 80px 40px 40px 60px;
+        color: var(--color);
+        max-width: 360px;
+
+        .step {
+            display: flex;
+            gap: 18px;
+            align-items: center;
+            margin-bottom: 50px;
+
+            .number {
+                width: 28px;
+                height: 28px;
+                border-radius: 100%;
+                border: 1px solid var(--color);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--color);
+
+            }
+
+            .Typography {
+                color: var(--color);
+            }
+
+            &.active {
+                --color: #{$main-color-bold};
+            }
+        }
+    }
+
+    .main-box {
+        .box {
+            width: 100%;
+            border: 1px solid #e5e5e5;
+            border-radius: 6px;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+.ViewCartTemplate{
+    padding-bottom: 40px;
+    
+    .CartItem{
+        margin-top: 25px;
+    }
+    .cart-price{
+        background: #eefbfb;
+        padding: 40px 30px;
+        border-radius: 18px;
+    }
+    .divider{
+        height: 1px;
+        background: #d8d8d8;
+    }
+}

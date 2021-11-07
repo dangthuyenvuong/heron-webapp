@@ -1,44 +1,50 @@
 import { Product } from "@types"
-import { Button, ButtonType, ListView, Rating, Title } from "components/atoms"
-import { Link } from "react-router-dom"
-import { currency } from "utils"
+import { Button, ListView, Rating, Title } from "components/atoms"
+import { generatePath, Link } from "react-router-dom"
+import { url } from "routers"
+import { classNames, currency } from "utils"
 import './style.scss'
 
-type ProductCardProp = Pick<React.HTMLAttributes<HTMLDivElement>, 'className'> & Product
+type ProductCardProp = Pick<React.HTMLAttributes<HTMLDivElement>, 'className'> & Product & {
+    horizontal?: boolean
+}
 
-export const ProductCard: React.FC<ProductCardProp> = ({ slug, rateCount, discountPercent, id, cover, price, realPrice, rate, name, className, ...ref }) => {
+export const ProductCard: React.FC<ProductCardProp> = ({ slug, horizontal, rateCount, discountPercent, id, cover, price, realPrice, rate, name, className, ...ref }) => {
+    const pathDetail = generatePath(url.productDetail, { slug, id })
+    console.log(url.productDetail)
     return (
         <div
-            {...ref}
-            className={`ProductCard ${className ?? ''}`}
+            className={classNames(`ProductCard`, className, { horizontal })}
         >
-            <div className="cover">
+            <Link to={pathDetail} className="cover">
                 <img alt={name} src={cover} />
-            </div>
-            <Title level={4}>
-                <Link to={slug}>{name}</Link>
-            </Title>
-            <div className="rate">
-                <Rating value={rate} readOnly/>
-                {
-                    rateCount > 0 && <div className="rate-count">({rateCount})</div>
-                }
-
-            </div>
-            <div className="flex jusitify-space-between items-center">
-                <div className="price">
+            </Link>
+            <div className="content">
+                <Title level={4}>
+                    <Link to={pathDetail}>{name}</Link>
+                </Title>
+                <div className="rate">
+                    <Rating value={rate} size="small" readOnly />
                     {
-                        discountPercent > 0 && (
-                            <div className="discount">
-                                <div className="percent">{discountPercent}%</div>
-                                <div className="price-discount">{currency(price)}</div>
-                            </div>
-                        )
+                        rateCount > 0 && <div className="rate-count">({rateCount})</div>
                     }
 
-                    <div className="real-price">{currency(realPrice)}</div>
                 </div>
-                <Button type={ButtonType.ADD_TO_CART}>Add to cart</Button>
+                <div className="flex jusitify-space-between items-center">
+                    <div className="price">
+                        {
+                            discountPercent > 0 && (
+                                <div className="discount">
+                                    <div className="percent">{discountPercent}%</div>
+                                    <div className="price-discount">{currency(price)}</div>
+                                </div>
+                            )
+                        }
+
+                        <div className="real-price">{currency(realPrice)}</div>
+                    </div>
+                    <Button size="small" type="lightly">Add to cart</Button>
+                </div>
             </div>
         </div>
     )

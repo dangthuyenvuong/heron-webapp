@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { classNames } from "utils"
 
 type MenuProp = React.HTMLAttributes<HTMLDivElement> & {
@@ -27,7 +27,7 @@ export const MenuItem: React.FC<MenuItemProp> = ({ children, to, className, ...r
             {...ref}
             className={classNames('MenuItem', className)}
         >
-            <Link to={to}>{children}</Link>
+            <NavLink to={to}>{children}</NavLink>
         </li>
     )
 }

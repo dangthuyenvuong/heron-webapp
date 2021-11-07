@@ -7,14 +7,14 @@ type RatingProp = RatingProps & {
     value?: number
 }
 
-export const Rating: React.FC<RatingProp> = ({ name, color, value, className, ...ref }) => {
+export const Rating: React.FC<RatingProp> = ({ name, size = 'medium', color, value, className, ...ref }) => {
     return (
         <RatingM
             {...ref}
-            className={classNames('Rating', className)}
+            className={classNames('Rating', className, { [size]: true })}
             name={name}
             value={value}
-            size={ref.size || 'medium'}
+            size={size || 'medium'}
             style={{ '--color': color || "#ff6d6f" } as any}
         />
     )

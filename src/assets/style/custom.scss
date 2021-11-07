@@ -1,80 +1,103 @@
-body{
+body {
     overflow-x: hidden;
 }
-.button{
-    border-radius: 100px !important;
-    padding: 0 46px !important;
-}
-.text-field:not(.phone-text-field){
-    .MuiOutlinedInput-root{
+
+.text-field:not(.phone-text-field) {
+    .MuiOutlinedInput-root {
         height: 100%;
         border-radius: $input-border-radius
     }
-   
-    label{
+
+    label {
         font-size: 17px;
         color: #a0a0a0;
         @include css3(transform, translate(14px, 20px));
     }
-    .MuiInputLabel-shrink{
+
+    .MuiInputLabel-shrink {
         @include css3(transform, translate(14px, 8px));
         font-size: 14px;
         color: #333333;
     }
-    input{
+
+    input {
         font-size: 18px;
         margin-top: 22px;
         padding: 5px 14px;
         box-sizing: border-box;
     }
-    fieldset{
-        height: 62px; 
+
+    fieldset {
+        height: 62px;
         top: 0;
     }
-    legend{
+
+    legend {
         display: none !important;
     }
 }
 
-.phone-text-field{
-    input{
+.phone-text-field {
+    input {
         font-size: 18px;
     }
-    fieldset{
-        height: 62px; 
+
+    fieldset {
+        height: 62px;
     }
-    legend{
+
+    legend {
         display: none !important;
     }
 }
-.MuiButton-root{
+
+.MuiButton-root {
     box-shadow: none !important;
 }
-.phone-field{
+
+.phone-field {
     border: $input-border;
     border-radius: $input-border-radius;
-    input{
+
+    input {
         font-size: 18px;
         height: 62px;
         box-sizing: border-box;
     }
-    fieldset{
+
+    fieldset {
         top: 0;
         display: none;
     }
+
     .MuiSelect-root {
         border-right: $input-border;
         border-radius: 0;
-        fieldset{
+
+        fieldset {
             top: -5px;
             display: none;
         }
     }
 }
-.MuiSelect-root{
-    &.rounded{
-        fieldset{
+
+.MuiSelect-root {
+    &.rounded {
+        fieldset {
             border-radius: 100px;
         }
+    }
+}
+
+
+$text-size: (14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38);
+$text-line-height: (16, 18, 28, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40);
+
+@for $i from 1 through length($text-size){
+    $size: nth($text-size, $i);
+    $lineHeight: nth($text-line-height, $i);
+    .text-#{$size} {
+        font-size: #{$size}px;
+        line-height: #{$lineHeight}px;
     }
 }

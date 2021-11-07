@@ -64,11 +64,6 @@
             @extend %vertical !optional;
         }
 
-        // &::#{$name}scrollbar {
-        //     height: 1px;
-        //     @extend %horizontal !optional;
-        // }
-
         &::#{$name}scrollbar-track {
             border-radius: $radius;
             background-color: $bg-scroll-track;
@@ -94,7 +89,6 @@
 %scrollbar {
     @include scrollbar($scrollbar-bg) {
         @at-root {
-
             // at-root to scope the use of the placeholders to li and to remove li from output
             %thumb {
                 width: $scrollbar-width;

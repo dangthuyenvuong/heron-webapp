@@ -1,3 +1,5 @@
+@import 'assets/style/import';
+
 .Header {
     border-bottom: 1px solid #e5e5e5;
     align-items: center;
@@ -10,13 +12,21 @@
         .Menu {
             ul {
                 display: flex;
-                gap: 35px;
+                gap: 30px;
                 a{
-                    font-size: 18px;
+                    font-size: 16px;
                     text-transform: capitalize;
-                    font-weight: 100;
                     color: #838383;
                     white-space: nowrap;
+                    display: block;
+                    line-height: 65px;
+                    font-weight: 500;
+                    &:hover,
+                    &.active{
+                        color: #424242;
+                        border-bottom: 3px solid $main-color; 
+                        text-shadow: 0 0 black;
+                    }
                 }
             }
         }
@@ -31,12 +41,13 @@
                 .name{
                     font-size: 18px;
                     white-space: nowrap;
+                    font-weight: bold;
                 }
                 .logout{
                     display: flex;
                     gap: 8px;
-                    font-weight: 100;
                     align-items: center;
+                    color: #838383;
                 }
             }
         }

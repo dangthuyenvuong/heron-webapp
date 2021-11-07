@@ -1,10 +1,10 @@
-import { Product } from '@types'
-import { BannerDownloadApp, HomePost, PostItemProp, Slider, SliderItemProp } from 'components/organisms'
+import { Product, Slider as ISlider } from '@types'
+import { BannerDownloadApp, HomePost, PostItemProp, Slider } from 'components/organisms'
 import { ProductCardList } from 'components/organisms'
 import './style.scss'
 
 type HomeTemplateProp = React.HTMLAttributes<HTMLDivElement> & {
-    sliders: SliderItemProp[],
+    sliders: ISlider[],
     posts: PostItemProp[],
     products: Product[]
 }

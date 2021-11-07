@@ -1,0 +1,28 @@
+.BookingPatientInfo {
+
+    .box {
+        max-width: 444px;
+        .wraning {
+            color: #ff6d6f;
+            background: #fff0f0;
+            border-radius: 6px;
+        }
+
+        .bottom {
+            background: #f8fefe;
+        }
+    }
+
+    .list-patient {
+        .icon-add {
+            .name {
+                justify-content: space-between;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .button {
+        min-width: 220px;
+    }
+}
