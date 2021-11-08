@@ -1,3 +1,14 @@
 .BookingDetail{
-    
+    .RadioGroup{
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        font-size: 18px;
+    }
+    .warning{
+        background: #f5f5f5;
+    }
+    .Button{
+        min-width: 220px;
+    }
 }

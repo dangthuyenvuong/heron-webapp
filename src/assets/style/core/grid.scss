@@ -53,7 +53,8 @@
 }
 
 .row {
-	margin: 0 (-$padding-col);
+	// margin: 0 (-$padding-col);
+	row-gap: $padding;
 	display: flex;
 	flex-wrap: wrap;
 
@@ -311,7 +312,7 @@ $width in $grid {
 
 			.col-#{$name}-#{$i} {
 				// width: $i * 100% / 12;
-				max-width: $i * 100% / 12;
+				flex-basis: $i * 100% / 12;
 			}
 
 
@@ -387,8 +388,9 @@ $width in $grid {
 	}
 
 	.col-#{$i} {
-		width: $i * 100% / 12;
-		padding: 0 $padding-col;
+
+		flex-basis: $i * 100% / 12;
+		// padding: 0 $padding-col;
 	}
 
 	.flex#{$i} {
@@ -477,8 +479,8 @@ $width in $grid {
 	}
 
 	.p-v-#{$i} {
-		margin-top: #{$i}px;
-		margin-bottom: #{$i}px;
+		padding-top: #{$i}px;
+		padding-bottom: #{$i}px;
 	}
 
 	.m-t-#{$i} {
@@ -550,6 +552,10 @@ $width in $grid {
 .flex-wrap{
 	flex-wrap: wrap;
 }
+.flex-row{
+	display: flex;
+	flex-direction: row;
+}
 .justify-center{
 	justify-content: center;
 }
@@ -559,9 +565,18 @@ $width in $grid {
 .min-width{
 	min-width: var(--min-width, unset);
 }
+.max-width{
+	max-width: var(--max-width, unset);
+}
 @each $var in (10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100) {
 	.gap-#{$var}{
 		gap: #{$var}px;
+	}
+	.gap-col-#{$var}{
+		column-gap: #{$var}px;
+	}
+	.gap-row-#{$var}{
+		row-gap: #{$var}px;
 	}
 	.m-t-#{$var}{
 		margin-top: #{$var}px;

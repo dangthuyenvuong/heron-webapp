@@ -1,23 +1,20 @@
 import { classNames } from "utils"
-import { RadioGroup as RadioGroupM } from '@mui/material'
+import { RadioGroup as RadioGroupM, Radio as RadioM, RadioGroupProps, RadioProps } from '@mui/material'
 import "./style.scss"
 
-type RadioGroupProp = React.HTMLAttributes<HTMLDivElement> & {
+type RadioGroupProp = RadioGroupProps
+
+export const RadioGroup: React.FC<RadioGroupProp> = ({ children, className, ...ref }) => {
+    return <RadioGroupM {...ref} className={classNames("RadioGroup", className)}> {children}</ RadioGroupM >
 }
 
-export const RadioGroup: React.FC<RadioGroupProp> = ({ children, ...ref }) => {
-    return <RadioGroupM {...ref}>{children}</RadioGroupM>
-}
+type RadioProp = RadioProps
 
-type RadioProp = React.HTMLAttributes<HTMLDivElement> & {
-}
-
-export const Radio: React.FC<RadioProp> = ({ className, ...ref }) => {
+export const Radio: React.FC<RadioProp> = ({ children, className, ...ref }) => {
     return (
-        <div
+        <RadioM
             {...ref}
             className={classNames('Radio', className)}
-        >
-        </div>
+        />
     )
 }

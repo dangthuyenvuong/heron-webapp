@@ -1,10 +1,8 @@
-import { ListView, Typography, Title, IconNotes, Button } from "components/atoms"
-import { UserItem } from "components/molecules"
-import { Breadcrumbs, BreadcrumbItem, BookingPatientInfo, BookingDetail } from "components/organisms"
-import { useState } from "react"
+import { ListView, Typography, StepRender, StepRenderRef } from "components/atoms"
+import { Breadcrumbs, BreadcrumbItem, BookingPatientInfo, BookingDetail, BookingConfirmAndPayment } from "components/organisms"
+import { useRef, useState } from "react"
 import { classNames } from "utils"
 import "./style.scss"
-import iconAddPatient from 'assets/icons/icon-add-patient.svg';
 
 type BookAppointmentTemplateProp = React.HTMLAttributes<HTMLDivElement> & {
 }
@@ -15,6 +13,7 @@ const STEP_PAYMENT = 2
 
 export const BookAppointmentTemplate: React.FC<BookAppointmentTemplateProp> = ({ className, ...ref }) => {
     const [step, setStep] = useState(STEP_INFO)
+    const stepRef = useRef<StepRenderRef>(null)
     const steps = [
         "Patient's Information",
         "Appintment Details",
@@ -46,8 +45,11 @@ export const BookAppointmentTemplate: React.FC<BookAppointmentTemplateProp> = ({
                         <BreadcrumbItem to="/">Home</BreadcrumbItem>
                         <BreadcrumbItem to="/book-appointment">Book appointment</BreadcrumbItem>
                     </Breadcrumbs>
-                    {/* <BookingPatientInfo /> */}
-                    <BookingDetail />
+                    <StepRender ref={stepRef} steps={[STEP_INFO, STEP_DETAIL, STEP_PAYMENT]} current={STEP_INFO}>
+                        <BookingPatientInfo stepFun={stepRef}/>
+                        <BookingDetail stepFun={stepRef}/>
+                        <BookingConfirmAndPayment stepFun={stepRef}/>
+                    </StepRender>
                 </div>
             </div>
         </div>

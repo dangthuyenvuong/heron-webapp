@@ -18,7 +18,7 @@ export const Button: React.FC<ButtonProp> = ({ link, size = 'middle', white, tra
     return <ButtonM
         {...ref}
         {...(link ? { onClick: () => history.push(link) } : {})}
-        className={classNames('button', `type-${type}`, `size-${size}`, ref.className, { white, transparent })}
+        className={classNames('button Button', `type-${type}`, `size-${size}`, ref.className, { white, transparent })}
         variant={variant}
     > {children}</ButtonM >
 }

@@ -48,6 +48,14 @@
     }
 }
 
+@mixin square {
+    &:after {
+        content: "";
+        display: block;
+        padding-bottom: 100%;
+    }
+}
+
 
 
 @mixin scrollbar($bg) {
@@ -89,6 +97,7 @@
 %scrollbar {
     @include scrollbar($scrollbar-bg) {
         @at-root {
+
             // at-root to scope the use of the placeholders to li and to remove li from output
             %thumb {
                 width: $scrollbar-width;

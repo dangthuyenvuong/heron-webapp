@@ -1,4 +1,4 @@
-import { Button, IconNotes, ListView, Title, Typography } from "components/atoms"
+import { Button, IconNotes, ListView, StepRenderRef, Title, Typography } from "components/atoms"
 import { UserItem } from "components/molecules"
 import { classNames } from "utils"
 import "./style.scss"
@@ -6,9 +6,10 @@ import iconAddPatient from 'assets/icons/icon-add-patient.svg';
 
 
 type BookingPatientInfoProp = React.HTMLAttributes<HTMLDivElement> & {
+    stepFun: React.RefObject<StepRenderRef>
 }
 
-export const BookingPatientInfo: React.FC<BookingPatientInfoProp> = ({ className, ...ref }) => {
+export const BookingPatientInfo: React.FC<BookingPatientInfoProp> = ({ stepFun, className, ...ref }) => {
 
     const users = [
         {
@@ -56,7 +57,7 @@ export const BookingPatientInfo: React.FC<BookingPatientInfoProp> = ({ className
             </div>
             <div className="flex m-t-auto gap-20 p-60 justify-flex-end">
                 <Button transparent>Cancle</Button>
-                <Button>Continue</Button>
+                <Button onClick={e => stepFun.current?.next()}>Continue</Button>
             </div>
         </div>
 

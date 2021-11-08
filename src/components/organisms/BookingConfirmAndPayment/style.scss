@@ -1,0 +1,21 @@
+@import 'assets/style/import';
+
+.BookingConfirmAndPayment{
+    .basic-info{
+        
+    }
+    .chandoan-image{
+        .image{
+            border-radius: 6px;
+            overflow: hidden;
+            @include square;
+            position: relative;
+            img{
+                @include mid-xy;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

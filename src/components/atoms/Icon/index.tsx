@@ -5,7 +5,6 @@ import googlePlayIcon from 'assets/icons/google-play-icon.svg'
 import iconMenu from 'assets/icons/icon-menu.svg'
 import iconLogout from 'assets/icons/icon-logout.svg'
 import iconLocation from 'assets/icons/icon-location.svg'
-import iconPhone from 'assets/icons/icon-phone.webp'
 import iconArrowBreadcrumb from 'assets/icons/icon-arrow-breadcrumb.svg'
 import iconSearch from 'assets/icons/icon-search.svg'
 import iconHeart from 'assets/icons/icon-heart.svg'
@@ -30,6 +29,16 @@ import iconTermOfService from 'assets/icons/icon-term-of-service.jpg'
 import iconAboutUs from 'assets/icons/icon-aboutus.jpg'
 import iconNotes from 'assets/icons/icon-notes.svg'
 import iconAddPatient from 'assets/icons/icon-add-patient.svg'
+
+
+import iconEmail from 'assets/icons/icon-email.svg'
+import iconGender from 'assets/icons/icon-gender.svg'
+import iconCountry from 'assets/icons/icon-country.svg'
+import iconCalendar from 'assets/icons/icon-calendar.svg'
+import iconAddress from 'assets/icons/icon-address.svg'
+import iconName from 'assets/icons/icon-name.svg'
+import iconPhone from 'assets/icons/icon-phone.svg'
+
 
 interface IconProp extends React.HTMLAttributes<HTMLDivElement> {
     src: string
@@ -167,4 +176,31 @@ export const IconNotes: React.FC<IconType> = ({ ...ref }) => {
 }
 export const IconAddPatient: React.FC<IconType> = ({ ...ref }) => {
     return <Icon src={iconAddPatient} {...ref}/>
+}
+
+
+// import iconEmail from 'assets/icons/icon-email.svg'
+// import iconGender from 'assets/icons/icon-gender.svg'
+// import iconCountry from 'assets/icons/icon-country.svg'
+// import iconCalendar from 'assets/icons/icon-calendar.svg'
+// import iconAddress from 'assets/icons/icon-address.svg'
+// import iconName from 'assets/icons/icon-name.svg'
+
+export const IconEmail: React.FC<IconType> = ({ ...ref }) => {
+    return <Icon src={iconEmail} {...ref}/>
+}
+export const IconGender: React.FC<IconType> = ({ ...ref }) => {
+    return <Icon src={iconGender} {...ref}/>
+}
+export const IconCountry: React.FC<IconType> = ({ ...ref }) => {
+    return <Icon src={iconCountry} {...ref}/>
+}
+export const IconCalendar: React.FC<IconType> = ({ ...ref }) => {
+    return <Icon src={iconCalendar} {...ref}/>
+}
+export const IconAddress: React.FC<IconType> = ({ ...ref }) => {
+    return <Icon src={iconAddress} {...ref}/>
+}
+export const IconName: React.FC<IconType> = ({ ...ref }) => {
+    return <Icon src={iconName} {...ref}/>
 }
