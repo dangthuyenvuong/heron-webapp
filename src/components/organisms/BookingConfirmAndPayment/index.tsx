@@ -1,4 +1,4 @@
-import { IconAddress, IconCalendar, IconCountry, IconEmail, IconGender, IconID, IconName, IconPhone, ListView, StepRenderRef, Title, Typography } from "components/atoms"
+import { IconAddress, IconCalendar, IconCountry, IconEmail, IconGender, IconID, IconName, IconPhone, ListView, Option, Select, StepRenderRef, Title, Typography } from "components/atoms"
 import { classNames } from "utils"
 import "./style.scss"
 
@@ -88,7 +88,35 @@ export const BookingConfirmAndPayment: React.FC<BookingConfirmAndPaymentProp> = 
                         render={e => <div className="image col-4"><img src={e} /></div>}
                     />
                 </div>
-                <div className="box col-md-4"></div>
+                <div className="box col-md-4">
+                    <div className="p-30">
+                        <Title level={2} className="text-18 semi-bold m-b-10">Select the promotion campaign if you have</Title>
+                        <Select placeholder="Please select" className="w-full">
+                            <Option value="0">0</Option>
+                            <Option value="1">1</Option>
+                            <Option value="2">2</Option>
+                        </Select>
+                    </div>
+                    <div className="p-t-20 p-l-30 p-r-30 p-b-40">
+                        <div className="flex justify-space-between m-b-20">
+                            <Typography className="text-18">Fee of examination</Typography>
+                            <Typography className="text-18 semi-bold">$ 120.00</Typography>
+                        </div>
+                        <div className="flex justify-space-between m-b-20">
+                            <Typography className="text-18">Tax</Typography>
+                            <Typography className="text-18 semi-bold">$ 12.00</Typography>
+                        </div>
+                        <div className="flex justify-space-between m-b-20">
+                            <Typography className="text-18">Discount</Typography>
+                            <Typography className="text-18 semi-bold">$ 20.00</Typography>
+                        </div>
+                        <div className="divider"></div>
+                        <div className="flex justify-space-between">
+                            <Typography className="text-18">TOTAL</Typography>
+                            <Typography className="text-20 bold">$ 112.00</Typography>
+                        </div>
+                    </div>
+                </div>
                 <div className="box col-md-4"></div>
             </div>
         </div>

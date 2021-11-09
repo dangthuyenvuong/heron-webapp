@@ -12,7 +12,7 @@ type SelectProp = Pick<React.HTMLAttributes<HTMLDivElement>, 'className'> & Sele
 
 export const Select: React.FC<SelectProp> = ({ label, children, className, ...ref }) => {
     return (
-        <FormControl>
+        <FormControl className={classNames('React', className)}>
             {label && <InputLabel>{label}</InputLabel>}
             <SelectM
                 label={label}
